@@ -3,7 +3,7 @@ require 'active_model'
 require 'active_model/validations'
 
 class CssValidator < ActiveModel::EachValidator
-  VALIDATOR = File.join(File.expand_path('../..', __FILE__), 'vendor', 'css-validator.jar')
+  VENDOR_DIR = File.join(File.expand_path('../..', __FILE__), 'vendor')
 
   def validate_each(record, attribute, value)
     java_path = `which java`.rstrip
@@ -16,10 +16,10 @@ class CssValidator < ActiveModel::EachValidator
     css_file.write(value)
     css_file.close
 
-    cmd = "#{java_path} -jar #{VALIDATOR} -output text -profile css3 'file:#{css_file.path}'"
+    cmd = "#{java_path} -jar #{VENDOR_DIR}/js.jar #{VENDOR_DIR}/csslint-rhino.js --quiet #{css_file.path}"
     Open3.popen3(cmd) do |stdin, stdout, stderr|
       result = stdout.read
-      if result =~ /found the following errors \((\d+)\)/
+      if result =~ /error/
         record.errors.add attribute, (options[:message] || 'is invalid')
       end
     end

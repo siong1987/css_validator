@@ -1,7 +1,7 @@
 # CSS Validator
 
-This uses the `css-validator.jar` from [W3C](http://jigsaw.w3.org/css-validator/DOWNLOAD.html) to validate CSS in ActiveModel.
-So, your system requires `java` to use this gem.
+This uses the `csslint.js` with `js.jar` from [CSSLint](https://github.com/CSSLint/csslint) to validate CSS in ActiveModel.
+So, your system requires `java` to use this gem.  And, it also works fine on Heroku.
 
 ## Usage
 

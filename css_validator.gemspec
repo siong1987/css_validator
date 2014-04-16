@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "css_validator"
-  s.version       = "1.0.0"
+  s.version       = "2.0.0"
   s.authors       = ["Teng Siong Ong"]
   s.email         = ["siong1987@gmail.com"]
   s.homepage      = "https://github.com/siong1987/css_validator"
