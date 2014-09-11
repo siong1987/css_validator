@@ -1,7 +1,7 @@
 # CSS Validator
 
 This uses the `csslint-node.js` from [CSSLint](https://github.com/CSSLint/csslint) to validate CSS in ActiveModel.
-So, your system requires `node.js` to use this gem.  It should work fine on Heroku.
+So, your system needs to have `node.js` installed in order to use this gem.  It should work fine on Heroku.
 
 ## Usage
 
